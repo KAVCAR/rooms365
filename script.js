@@ -8,7 +8,7 @@ window.addEventListener("load", function () {
 
     setTimeout(function () {
         loader.classList.add("hide");
-    }, 700);
+    }, 900);
 
 });
 /* ==================================================
