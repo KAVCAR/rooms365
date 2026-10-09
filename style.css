@@ -476,6 +476,8 @@ select {
 
     z-index: 2;
 
+    left: -45px;
+
 }
 
 
@@ -496,7 +498,7 @@ select {
 
     font-family: "Playfair Display", serif;
 
-    font-size: clamp(60px, 8vw, 110px);
+    font-size: clamp(60px, 8vw, 75px);
 
     font-weight: 400;
 
