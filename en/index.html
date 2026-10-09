@@ -1,8295 +1,1071 @@
 <!DOCTYPE html>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <html lang="en">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <head>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    <meta charset="UTF-8">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    <title>Rooms 365 | Boutique Hotel</title>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    <link rel="stylesheet" href="../style.css">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <style>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Only the View Room link is clickable inside room cards */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .room-card .room-image,
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .room-card .room-image img,
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .room-card .room-tag {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    pointer-events: none;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .room-card .room-link {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    pointer-events: auto;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    position: relative;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    z-index: 5;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
 
+@media (max-width: 768px) {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 .language-switch {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 30px;
     margin-left: 8px;
     text-decoration: none;
     vertical-align: middle;
     position: relative;
     top: -1px;
     flex-shrink: 0;
-}
-
-.language-switch .flag-emoji {
-    display: block;
-    font-size: 30px;
-    line-height: 1;
     transition: transform 0.2s ease;
 }
-
-.language-switch:hover .flag-emoji {
+.language-switch .flag-image {
+    display: block;
+    width: 30px;
+    height: 20px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+.language-switch:hover {
     transform: scale(1.12);
 }
-
 @media (max-width: 768px) {
     .language-switch {
         width: 34px;
-        height: 34px;
+        height: 28px;
         margin-left: 6px;
     }
-
-    .language-switch .flag-emoji {
-        font-size: 28px;
+    .language-switch .flag-image {
+        width: 28px;
+        height: 19px;
     }
 }
 
 </style>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <style>
-.language-switch {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    margin-left: 8px;
-    text-decoration: none;
-    vertical-align: middle;
-    line-height: 1;
-    position: relative;
-    top: -1px;
-    flex-shrink: 0;
-}
 
-.language-switch .flag-emoji {
-    display: block;
-    font-size: 30px;
-    line-height: 1;
-}
-
-.language-switch:hover .flag-emoji {
-    transform: scale(1.12);
-    transition: transform 0.2s ease;
-}
 </style>
 
 </head>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    <div id="loader">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    <div class="loader-logo">ROOMS 365</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    <header class="header" id="header">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    <div class="logo">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        <a href="#home">ROOMS 365</a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    <nav class="nav">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <a href="#home">Home</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        <a href="#rooms">Rooms</a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <a href="#story">About Us</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        <a href="#gallery">Gallery</a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <a href="#sss">FAQ</a>
 
-      <a href="../index.html" class="language-switch" aria-label="Türkçe">
-    <span class="flag-emoji">🇹🇷</span>
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      <a href="../index.html" class="language-switch" aria-label="Türkçe" title="Türkçe">
+            <img class="flag-image" src="../images/turkey-flag.svg" alt="Türkçe" width="30" height="20">
+        </a>
 
    </nav>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    <button class="menu-btn" id="menuBtn">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+       <span></span>
 
        <span></span>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <span></span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       <span></span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    </button>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </header>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- ================= MOBILE MENU ================= -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <div class="mobile-menu" id="mobileMenu">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    <button class="close-menu" id="closeMenu">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        ×
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    </button>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    <a href="#home">Home</a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    <a href="#rooms">Rooms</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    <a href="#story">About Us</a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    <a href="#gallery">Gallery</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    <a href="#reservation" class="mobile-reservation">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        Make a Reservation
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    </a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- ================= HERO ================= -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <section class="hero" id="home" style="background: url('https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_627,q_auto,w_1200/partner-images/e9/9e/73f2b0176f3c08e99f802ca966620a01b86069ac33482565437b0b5d3267.jpeg') center center / cover no-repeat;">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    <div class="hero-overlay"></div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    <div class="hero-content">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        <p class="hero-small">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
          • FETHİYE
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        <h1>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            The Mediterranean
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            <i>rhythm</i> feel.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </h1>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        <p class="hero-description">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            Blue seas, lush green mountains and a peaceful holiday
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            your new address in Fethiye.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
       <a href="#rooms" class="main-btn">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    Plan Your Stay
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    <span>→</span>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    <div class="scroll-down">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <span></span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        SCROLL DOWN
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <section class="intro section">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    <div class="intro-left">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        <p class="eyebrow">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            ROOMS 365
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        </p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            Relax,
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            <em>slow down.</em>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </h2>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    <div class="intro-right">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <p class="large-text">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            Just minutes from the Blue Flag Ölüdeniz Beach
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            surrounded by nature, offering a peaceful and modern
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            accommodation experience.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            Wake up to birdsong, enjoy the sun throughout the day,
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            enjoy the sun throughout the day, and in the evening, experience the unique
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            Mediterranean atmosphere for unforgettable moments.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        <a href="#story" class="text-link">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            Discover our story →
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        </a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- ================= EXPERIENCE IMAGE ================= -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <section class="wide-image">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    <div class="image-text">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <span>ROOMS EXPERIENCE</span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- ================= ROOMS ================= -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <section class="rooms section" id="rooms">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    <div class="section-heading">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            <span class="eyebrow">ACCOMMODATION</span>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        <div class="rooms-title">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    <p class="section-description">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        Discover our thoughtfully designed rooms for your comfort.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    </p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    <div class="rooms-grid">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        <article class="room-card">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <div class="room-image">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
              <img src="../images/101-201 standart balkonlu 2 ad/seçilenler/FTH04744.jpg"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     alt="Standard Room">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <span class="room-tag">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                    STANDARD
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                </span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <div class="room-info">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                <h3>Standard</h3>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                    Spacious living area and king-size bed.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                <div class="room-details">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                    <span>24 m²</span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                    <span>2 Guests</span>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                    <span>King Size</span>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                <a href="rooms-detail.html?oda=standart" class="room-link">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                    View Room →
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                </a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        </article>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <article class="room-card">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <div class="room-image">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                <img src="../images/104-204 standart fransız balkonlu 2 ad/seçilenler/FTH04678 copy.jpg" alt="Deluxe Oda">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <span class="room-tag">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                    STANDARD FRANSIZ
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                </span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <div class="room-info">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                <h3>Standard French</h3>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                    Comfortable simplicity with a modern design.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                <div class="room-details">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                    <span>24 m²</span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                    <span>2 Guests</span>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                    <span>King Size</span>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                <a href="rooms-detail.html?oda=standart-fransiz" class="room-link">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                    View Room →
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                </a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        </article>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <article class="room-card">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <div class="room-image">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                <a href="" target="blank">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <img src="" alt="Economy Standard Room">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <span class="room-tag">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                    ECONOMY STANDARD
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                </span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <div class="room-info">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                <h3>Economy Standard</h3>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                    Pool view and spacious living area.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                </p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <div class="room-details">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                    <span>24 m²</span>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                    <span>2 Guests</span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                    <span>King Size</span>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                <a href="rooms-detail.html?oda=economy" class="room-link">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                    View Room →
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                </a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        </article>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <article class="room-card">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <div class="room-image">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                <img src="../images/102-202 delüx balkonlu 2ad/seçilenler/FTH04709.jpg" alt="Deluxe French Room">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <span class="room-tag">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                    DELUXE
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                </span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <div class="room-info">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                <h3>Deluxe</h3>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                    Pool view and spacious living area.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                <div class="room-details">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                    <span>39 m²</span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                    <span>4 Guests</span>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                    <span>King Size</span>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                <a href="rooms-detail.html?oda=deluxe" class="room-link">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                    View Room →
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                </a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </article>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        <article class="room-card">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <div class="room-image">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                <img src="../images/Özkan 365/deluxe fransız balkon/DSC06664.jpg" alt="Deluxe French Room">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <span class="room-tag">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                    DELUXE FRENCH BALCONY
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                </span>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            <div class="room-info">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <h3>Deluxe French</h3>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                    Pool view and spacious living area.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                <div class="room-details">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                    <span>39 m²</span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                    <span>4 Guests</span>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                    <span>King Size</span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <a href="rooms-detail.html?oda=deluxe-fransiz" class="room-link">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                    View Room →
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                </a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        </article>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- ================= STORY ================= -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <section class="story section" id="story">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    <div class="story-image">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <img src="../images/102-202 delüx balkonlu 2ad/seçilenler/FTH04709.jpg" alt="Hotel">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    <div class="story-content">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <span class="eyebrow">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            OUR STORY
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </span>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            Experience Fethiye
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            <em>to the fullest.</em>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </h2>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            Experience the tranquility of Fethiye.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Inspired by the unique nature of Fethiye and the warm atmosphere of the Mediterranean, ROOMS 365 offers a special accommodation experience that combines comfort and simplicity.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 We aim to create an environment where our guests do more than stay; they relax, create beautiful memories and enjoy every moment of their holiday.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 With our modern, thoughtfully designed rooms, peaceful atmosphere and guest-focused service, ROOMS 365 is a place where you can feel at home.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 For us, a beautiful holiday is found in the little details.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        <p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            When designing this hotel, we had one thing in mind: giving everyone who comes here a little more time for themselves, for peace and for beautiful moments.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        </p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </section
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-***<!--*** *=**================*** GALLERY =***================*** -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- ================= GALLERY ================= -->
 
 <section class="gallery section" id="gallery">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    <div class="gallery-heading">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        <span class="eyebrow">GALLERY</span>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            Take a closer
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            <em>look.</em>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </h2>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    <div class="gallery-grid">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <img src="../images/DSC04969.jpg" alt="">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        <img src="../images/gallery-2.jpg" alt="">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <img src="../images/gallery-3.jpg" alt="">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        <img src="../images/gallery-4.jpg" alt="">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <img src="../images/gallery-5.jpg" alt="">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        <img src="../images/gallery-6.jpg" alt="">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- ================= FAQ ================= -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <section class="faq section" id="sss">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    <div class="faq-title">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <span class="eyebrow" >
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            FAQ
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        <h2>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            Frequently
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            <br>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <em>asked questions.</em>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        </h2>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    <div class="faq-list">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <div class="faq-item">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <button class="faq-question">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                What are the check-in and check-out times?
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <span>+</span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            </button>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <div class="faq-answer">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                    Check-in is at 14:00 and check-out is at 12:00.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            <div class="faq-list">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <div class="faq-item">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <button class="faq-question">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                Do you have a private beach?
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <span>+</span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            </button>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <div class="faq-answer">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                    We have an agreement with Alesta Beach. We offer free entry.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        <div class="faq-item">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <button class="faq-question">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                How far are you from the waterfront?
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <span>+</span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            </button>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <div class="faq-answer">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                    5–10 minutes on foot
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        <div class="faq-item">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <button class="faq-question">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                How far are you from the fish market?
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <span>+</span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            </button>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <div class="faq-answer">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                    5 minutes on foot
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                <div class="faq-item">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <button class="faq-question">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                 How far are you from Paspatur Bazaar?
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <span>+</span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            </button>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <div class="faq-answer">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                    10 minutes on foot
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        <div class="faq-item">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <button class="faq-question">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                Is parking available?
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <span>+</span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            </button>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <div class="faq-answer">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                    Our hotel is located on a main street, with free street parking available.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                </p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            <div class="faq-item">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <button class="faq-question">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                How far are you from Çalış?
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <span>+</span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            </button>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <div class="faq-answer">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                    We are 5 km away.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            <div class="faq-item">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <button class="faq-question">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                How far are you from Ölüdeniz?
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <span>+</span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            </button>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <div class="faq-answer">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                    We are 14 km away.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        <button class="faq-question">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                How far are you from Saklıkent?
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                <span>+</span>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            </button>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            <div class="faq-answer">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                    4We are 5 km away.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                <button class="faq-question">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                Do you offer airport transfers?
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                <span>+</span>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            </button>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            <div class="faq-answer">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                <p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                     We do not offer a paid transfer service from Dalaman Airport.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                    hizmetimiz bulunmamaktadır.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                </p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- ================= FOOTER ================= -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <footer class="footer">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    <div class="footer-inner">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        <!-- LOGO -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <div class="footer-brand">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            <a href="index.html" class="footer-logo">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                ROOMS 365
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            </a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            <span class="footer-location">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                FETHİYE • MUĞLA
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            </span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            <p class="footer-description">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                Experience the peace, comfort and warmth of the Mediterranean
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                in one place.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            </p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        <!-- HIZLI MENÜ -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <div class="footer-menu">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <span class="footer-title">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                EXPLORE
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            </span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            <a href="index.html">Home</a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <a href="index.html#rooms">Rooms</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            <a href="index.html#story">Our Story</a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <a href="index.html#gallery">Gallery</a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        <!-- CONTACT -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <div class="footer-contact">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <span class="footer-title">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                CONTACT
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            </span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            <p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                Fethiye / Muğla
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            </p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <a href="tel:+905000000000">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                +90 500 000 00 00
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            </a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            <a href="mailto:info@rooms365.com">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                info@rooms365.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            </a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        <!-- SOSYAL -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <div class="footer-social">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            <span class="footer-title">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                FOLLOW US
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            </span>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <div class="footer-social-links">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                <a href="#" aria-label="Instagram">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                    Instagram
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                </a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                <a href="#" aria-label="Facebook">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                    Facebook
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                </a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    <!-- ALT BÖLÜM -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    <div class="footer-bottom">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            © 2026 ROOMS 365
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </span>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            All rights reserved.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        </span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        <span>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            Fethiye • Türkiye
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        </span>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </footer>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- WHATSAPP -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <a href="https://wa.me/905324890365"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   class="whatsapp"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   target="_blank">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    <span>WhatsApp</span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    <strong>↗</strong>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <script src="../script.js"></script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 document.querySelectorAll(".faq-question").forEach(function(question) {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    question.addEventListener("click", function() {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        const item = this.parentElement;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        const answer = item.querySelector(".faq-answer");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
        const icon = this.querySelector("span");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        if (item.classList.contains("active")) {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            item.classList.remove("active");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            answer.style.maxHeight = "0px";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            icon.textContent = "+";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        } else {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            item.classList.add("active");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            answer.style.maxHeight = answer.scrollHeight + "px";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
            icon.textContent = "−";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
    });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </html>
