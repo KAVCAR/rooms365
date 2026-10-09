@@ -284,12 +284,12 @@
                height: 20px;
                object-fit: cover;
                border-radius: 2px;
-               margin-right: 30px;
+               margin-right: 50;
+               margin-bottom: 10px;
            }
            .language-switch:hover {
                transform: scale(1.12);
            }
-      
         /* Room detail navbar: SVG language flag before the back link */
         .header {
             display: flex;
@@ -298,7 +298,7 @@
         }
         .header .logo { margin-right: auto; }
         .header .language-switch {
-            order: 2;
+            order: 3;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -310,7 +310,7 @@
             line-height: 1;
         }
         .header .back-link {
-            order: 3;
+            order: 2;
             margin-left: 0;
             display: inline-flex;
             align-items: center;
@@ -331,10 +331,10 @@
     <div class="logo">
         <a href="index.html">ROOMS 365</a>
     </div>
+    <a href="index.html#rooms" class="back-link">← BACK TO ROOMS</a>
     <a href="#" class="language-switch" aria-label="Türkçe" title="Türkçe">
         <img src="../images/turkey-flag.svg" alt="Türkçe" class="flag-image">
     </a>
-    <a href="index.html#rooms" class="back-link">← BACK TO ROOMS</a>
 </header>
 <main class="room-detail">
        <!-- =====================================================
