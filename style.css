@@ -3747,3 +3747,29 @@ h2 em {
     }
 
 }
+/* MOBİL HERO YAZI DÜZELTMESİ */
+@media (max-width: 768px) {
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 20px;
+        margin: 0;
+        left: auto;
+        right: auto;
+        transform: none;
+        box-sizing: border-box;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(42px, 11vw, 65px);
+        line-height: 1.05;
+        letter-spacing: -1px;
+        overflow-wrap: break-word;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+}
