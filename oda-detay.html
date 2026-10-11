@@ -22,6 +22,7 @@
         }
         .room-detail {
             padding-top: 110px;
+            position: relative;
         }
         .room-detail-image {
             width: 100%;
@@ -226,7 +227,7 @@
         }
         @media (max-width: 600px) {
             .room-detail {
-                padding-top: 80px;
+                padding-top: 30px;
             }
             .room-detail-image {
                 height: 390px;
@@ -314,8 +315,6 @@
     height: 20px;
     object-fit: cover;
     border-radius: 2px;
-    margin-left: 50px;
-    margin-bottom: 10px;
 }
 .header .back-link {
     order: 2;
@@ -326,11 +325,68 @@
     white-space: nowrap;
     line-height: 1.2;
 }
+/* Mobilde üst menü ve fotoğraf üzerindeki geri dönüş bağlantısı */
+.mobile-photo-back-link {
+    display: none;
+}
+
 @media (max-width: 600px) {
-    .header { gap: 8px; }
-    .header .language-switch { width: 32px; height: 32px; flex-basis: 32px; }
-    .header .language-switch .flag-image { width: 28px; height: 19px; }
-    .header .back-link { font-size: 10px; }
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    .header .logo {
+        margin-right: auto;
+        min-width: 0;
+    }
+
+    /* Geri dönüş bağlantısı yalnızca ana fotoğrafın üzerinde gösterilir */
+    .header .back-link {
+        display: none;
+    }
+
+    .header .language-switch {
+        display: inline-flex;
+        order: 2;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        flex: 0 0 36px;
+        margin: 0 0 0 auto;
+        padding: 0;
+    }
+
+    .header .language-switch .flag-image {
+        display: block;
+        width: 30px;
+        height: 20px;
+        margin: 0;
+        object-fit: cover;
+    }
+
+    /* Yalnızca düz a href bağlantısı: fotoğrafın üstündeki boşlukta sağda */
+    .mobile-photo-back-link {
+        display: block;
+        position: static;
+        margin: 0 12px 8px;
+        padding: 0;
+        background: none;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        color: #252b27;
+        font-family: "DM Sans", sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1.4;
+        text-align: right;
+        text-decoration: underline;
+        white-space: nowrap;
+    }
 }
 </style>
 </head>
@@ -349,6 +405,7 @@
          1. ANA FOTOĞRAF
          BU FOTOĞRAF SABİT KALACAK
     ====================================================== -->
+    <a href="index.html#rooms" class="mobile-photo-back-link">← ODALARA DÖN</a>
     <div class="room-detail-image">
         <img id="roomImage" src="" alt="Oda">
     </div>
@@ -386,7 +443,7 @@
                 <span class="eyebrow">ODA DETAYLARI</span>
                 <h2>Odayı daha yakından keşfedin</h2>
             </div>
-            
+            <p>Fotoğrafa tıklayarak büyütebilirsiniz</p>
         </div>
         <div id="roomGallery" class="owl-carousel owl-theme room-gallery">
             <!-- JavaScript dolduracak -->
@@ -395,7 +452,11 @@
     <!-- =====================================================
          4. ODA NUMARALARI
     ====================================================== -->
-
+    <div class="room-content">
+        <div class="rooms-list">
+            <h2>Bu kategorideki odalar</h2>
+            <div id="roomNumbers"></div>
+        </div>
         <a href="https://rooms365.rezervasyonal.com/?language=tr" target="_blank" class="reservation-btn">
             REZERVASYON YAP →
         </a>
@@ -452,11 +513,11 @@
             <p>
                 Fethiye / Muğla
             </p>
-            <a href="tel:+9053228000099">
-                +90 532 280 00 99
+            <a href="tel:+905000000000">
+                +90 500 000 00 00
             </a>
             <a href="mailto:info@rooms365.com">
-                info@rooms365fethiye.com
+                info@rooms365.com
             </a>
         </div>
         <!-- SOSYAL -->
@@ -465,9 +526,12 @@
                 BİZİ TAKİP EDİN
             </span>
             <div class="footer-social-links">
-                  <a href="https://www.instagram.com/rooms.365/" target="_blank" rel="noopener noreferrer">
-                      Instagram
-                  </a>
+                <a href="#" aria-label="Instagram">
+                    Instagram
+                </a>
+                <a href="#" aria-label="Facebook">
+                    Facebook
+                </a>
             </div>
         </div>
     </div>
@@ -495,16 +559,16 @@ const rooms = {
         tag: "STANDART",
         image: "images/101-201 standart balkonlu 2 ad/seçilenler/FTH04744.jpg",
         description: "Ferah yaşam alanı ve king size yatak ile sade, huzurlu ve konforlu bir konaklama deneyimi.",
-        size: "19 m²",
+        size: "24 m²",
         capacity: "2 Kişi",
         bed: "King Size",
         /* TEST FOTOĞRAFLARI */
         gallery: [
-            "images/101-201 standart balkonlu 2 ad/seçilenler/FTH04747.jpg",
-            "images/101-201 standart balkonlu 2 ad/seçilenler/FTH04755.jpg",
-            "images/101-201 standart balkonlu 2 ad/seçilenler/FTH04750.jpg",
-            "images/101-201 standart balkonlu 2 ad/seçilenler/FTH04761.jpg",
-            "images/101-201 standart balkonlu 2 ad/seçilenler/DSC04969.jpg"
+            "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1200&q=85"
         ],
         numbers: []
     },
@@ -513,15 +577,15 @@ const rooms = {
         tag: "STANDART FRANSIZ",
         image: "images/104-204 standart fransız balkonlu 2 ad/seçilenler/FTH04678 copy.jpg",
         description: "Sade ve modern tasarımın konforlu hali. Dinlenmeniz için özenle hazırlanmış yaşam alanı.",
-        size: "20 m²",
+        size: "24 m²",
         capacity: "2 Kişi",
         bed: "King Size",
         gallery: [
-            "images/104-204 standart fransız balkonlu 2 ad/seçilenler/FTH04673 copy.jpg",
-            "images/104-204 standart fransız balkonlu 2 ad/seçilenler/FTH04675.jpg",
-            "images/104-204 standart fransız balkonlu 2 ad/seçilenler/FTH04676.jpg",
-            "images/104-204 standart fransız balkonlu 2 ad/seçilenler/FTH04685.jpg",
-            "images/104-204 standart fransız balkonlu 2 ad/seçilenler/FTH04706.jpg"
+            "https://images.unsplash.com/photo-1590490359683-658d3d23f972?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1200&q=85"
         ],
         numbers: []
     },
@@ -530,7 +594,7 @@ const rooms = {
         tag: "ECONOMY STANDART",
         image: "",
         description: "Temel konforu ve sade tasarımı bir araya getiren ekonomik konaklama seçeneği.",
-        size: "16 m²",
+        size: "24 m²",
         capacity: "2 Kişi",
         bed: "King Size",
         gallery: [
@@ -546,15 +610,15 @@ const rooms = {
         tag: "DELUXE",
         image: "images/102-202 delüx balkonlu 2ad/seçilenler/FTH04709.jpg",
         description: "Geniş yaşam alanı, balkon ve ferah atmosferiyle daha konforlu bir konaklama deneyimi.",
-        size: "35 m²",
+        size: "39 m²",
         capacity: "4 Kişi",
         bed: "King Size",
         gallery: [
-            "images/102-202 delüx balkonlu 2ad/seçilenler/FTH04726.jpg",
-            "images/102-202 delüx balkonlu 2ad/seçilenler/FTH04730.jpg",
-            "images/102-202 delüx balkonlu 2ad/seçilenler/FTH04714.jpg",
-            "images/102-202 delüx balkonlu 2ad/seçilenler/FTH04736.jpg",
-            "images/102-202 delüx balkonlu 2ad/seçilenler/FTH04718.jpg"
+            "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=1200&q=85"
         ],
         numbers: []
     },
@@ -563,15 +627,15 @@ const rooms = {
         tag: "DELUXE FRANSIZ BALKON",
         image: "images/Özkan 365/deluxe fransız balkon/DSC06664.jpg",
         description: "Geniş ve modern yaşam alanı ile şık Fransız balkonun birleştiği özel oda kategorisi.",
-        size: "35 m²",
+        size: "39 m²",
         capacity: "4 Kişi",
         bed: "King Size",
         gallery: [
-            "images/Özkan 365/deluxe fransız balkon/DSC06663.jpg",
-            "images/Özkan 365/deluxe fransız balkon/DSC06658.jpg",
-            "images/Özkan 365/deluxe fransız balkon/DSC06661.jpg",
-            "images/Özkan 365/deluxe fransız balkon/DSC06666.jpg",
-            "images/Özkan 365/deluxe fransız balkon/DSC06640.jpg"
+            "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1590490359683-658d3d23f972?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=85"
         ],
         numbers: []
     }

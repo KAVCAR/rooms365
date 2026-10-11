@@ -47,87 +47,184 @@
 }
 
 .nav {
+
     align-items: center;
+
 }
+
 .nav > a {
+
     display: inline-flex;
+
     align-items: center;
+
     line-height: 1;
+
 }
+
 .nav .language-switch {
+
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
+
     width: 38px;
+
     height: 100%;
+
     margin: 0 0 0 8px;
+
     padding: 0;
+
     text-decoration: none;
+
     vertical-align: middle;
+
     position: static;
+
     flex-shrink: 0;
+
     line-height: 1;
+
     transition: transform 0.2s ease;
+
 }
+
 .nav .language-switch .flag-image {
+
     display: block;
+
     width: 30px;
+
     height: 20px;
+
     object-fit: cover;
+
     border-radius: 2px;
+
 }
+
 .nav .language-switch:hover {
+
     transform: scale(1.12);
+
 }
+
 @media (max-width: 768px) {
+
     .nav .language-switch {
+
         width: 34px;
+
         height: 100%;
+
         margin-left: 6px;
+
     }
+
     .nav .language-switch .flag-image {
+
         width: 28px;
+
         height: 19px;
+
     }
+
 }
 
-</style>
-
-<style>
-
-</style>
 
 
-<style>
-/* Keep navbar labels and Turkish flag vertically aligned */
-.nav { align-items: center !important; }
-.nav > a { display: inline-flex; align-items: center; line-height: 1; }
-.nav .language-switch {
+/* Turkish flag at the bottom of the English mobile menu */
+.mobile-menu .mobile-language-switch {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 38px;
-    height: 100%;
-    margin: 0 0 0 8px;
-    padding: 0;
-    vertical-align: middle;
-    position: static;
-    flex-shrink: 0;
+    width: 42px;
+    height: 30px;
+    margin-top: -8px;
+    font-size: 0;
     line-height: 1;
-    transition: transform 0.2s ease;
 }
-.nav .language-switch .flag-image {
+
+.mobile-menu .mobile-language-switch::after {
+    display: none;
+}
+
+.mobile-menu .mobile-language-switch .flag-image {
     display: block;
-    width: 30px;
-    height: 20px;
+    width: 34px;
+    height: 23px;
     object-fit: cover;
+    border-radius: 3px;
+}
+</style>
+
+<style>
+
+</style>
+
+<style>
+
+/* Keep navbar labels and Turkish flag vertically aligned */
+
+.nav { align-items: center !important; }
+
+.nav > a { display: inline-flex; align-items: center; line-height: 1; }
+
+.nav .language-switch {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 38px;
+
+    height: 100%;
+
+    margin: 0 0 0 8px;
+
+    padding: 0;
+
+    vertical-align: middle;
+
+    position: static;
+
+    flex-shrink: 0;
+
+    line-height: 1;
+
+    transition: transform 0.2s ease;
+
+}
+
+.nav .language-switch .flag-image {
+
+    display: block;
+
+    width: 30px;
+
+    height: 20px;
+
+    object-fit: cover;
+
     border-radius: 2px;
+
 }
+
 .nav .language-switch:hover { transform: scale(1.12); }
+
 @media (max-width: 768px) {
+
     .nav .language-switch { width: 34px; height: 100%; margin-left: 6px; }
+
     .nav .language-switch .flag-image { width: 28px; height: 19px; }
+
 }
+
 </style>
 
 </head>
@@ -161,7 +258,9 @@
        <a href="#sss">FAQ</a>
 
       <a href="../index.html" class="language-switch" aria-label="Türkçe" title="Türkçe">
+
             <img class="flag-image" src="../images/turkey-flag.svg" alt="Türkçe" width="30" height="20">
+
         </a>
 
    </nav>
@@ -197,25 +296,38 @@
    <a href="#gallery">Gallery</a>
 
    <a href="https://rooms365.rezervasyonal.com/?language=tr"
+
    target="_blank"
+
    rel="noopener noreferrer"
+
    class="mobile-reservation">
+
     Rezervasyon Yap
+
 </a>
 
+    <a href="../index.html" class="mobile-language-switch" aria-label="Türkçe" title="Türkçe">
+        <img src="../images/turkey-flag.svg" alt="Türkçe" class="flag-image">
+    </a>
 </div>
 
 <!-- ================= HERO ================= -->
 
 <section class="hero" id="home"
+
     style="background: url('../images/102-202 delüx balkonlu 2ad/seçilenler/FTH04730.jpg') center center / cover no-repeat;">
 
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
+
         <p class="hero-small">
+
             • FETHİYE
+
         </p>
+
         <h1>
 
             Feel the rhythm
@@ -622,7 +734,7 @@ For us, a beautiful holiday is found in the little details.
 
 </section
 
-<!-- ================= GALLERY ================= -->
+*<!--* *=================* GALLERY =*================* -->
 
 <section class="gallery section" id="gallery">
 
@@ -645,9 +757,13 @@ For us, a beautiful holiday is found in the little details.
    <div class="gallery-grid">
 
           <img src="../images/Özkan 365/genel dış ve iç/DSC06698.jpg" alt="">
+
           <img src="../images/Özkan 365/genel dış ve iç/DSC06687.jpg" alt="">
+
           <img src="../images/Özkan 365/genel dış ve iç/DSC06683.jpg" alt="">
+
           <img src="../images/Özkan 365/genel dış ve iç/DSC06681.jpg" alt="">
+
           <img src="../images/Özkan 365/genel dış ve iç/DSC06700.jpg" alt="">
 
    </div>
@@ -859,30 +975,46 @@ For us, a beautiful holiday is found in the little details.
        </div>
 
 <div class="faq-item">
+
     <button class="faq-question">
+
         How far are you from Saklıkent?
+
         <span>+</span>
+
     </button>
 
     <div class="faq-answer">
+
         <p>We are 45 km away.</p>
+
     </div>
+
 </div>
 
 <div class="faq-item">
+
     <button class="faq-question">
+
         Do you offer airport transfers?
+
         <span>+</span>
+
     </button>
 
     <div class="faq-answer">
-        <p>
-            We do not offer a paid transfer service
-            from Dalaman Airport.
-        </p>
-    </div>
-</div>
 
+        <p>
+
+            We do not offer a paid transfer service
+
+            from Dalaman Airport.
+
+        </p>
+
+    </div>
+
+</div>
 
        </div>
 
@@ -983,11 +1115,12 @@ For us, a beautiful holiday is found in the little details.
            </span>
 
           <div class="footer-social-links">
-                  <a href="https://www.instagram.com/rooms.365/" target="_blank" rel="noopener noreferrer">
-                      Instagram
-                  </a>
 
-               
+                  <a href="https://www.instagram.com/rooms.365/" target="_blank" rel="noopener noreferrer">
+
+                      Instagram
+
+                  </a>
 
            </div>
 
